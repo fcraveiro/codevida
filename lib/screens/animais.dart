@@ -36,16 +36,19 @@ class _AnimaisState extends State<Animais> {
         backgroundColor: Colors.green[800],
         centerTitle: true,
       ),
-      body: ListView.builder(
+      body:
+
+
+
+
+
+      ListView.builder(
           itemCount: data == null ? 0 : data.length,
           itemBuilder: (BuildContext context, int index) {
             var urlImagem = data[index]['imageUrl'];
             var titulo = data[index]['title'];
             var descricao = data[index]['description'];
 //            debugPrint('$index');
-
-
-
             return Container(
               decoration: BoxDecoration(
                 border: new Border(
