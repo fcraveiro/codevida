@@ -55,6 +55,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+  #
+  # Nunito
+  # MerriweatherSans
+  # Raleway
+  #
+  #
 
   assets:
     - assets/dog.png
@@ -62,3 +68,51 @@ flutter:
     - assets/doar.png
     - assets/news.png
     - assets/drawer.jpg
+
+  fonts:
+
+
+    - family: MerriweatherSans
+      fonts:
+        - asset: assets/fonts/MerriweatherSans-Regular.ttf
+
+    - family: Raleway
+      fonts:
+        - asset: assets/fonts/Raleway-Regular.ttf
+
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+
+    - family: AlegreyaSans
+      fonts:
+        - asset: assets/fonts/AlegreyaSans-Regular.ttf
+
+    - family: Galada
+      fonts:
+        - asset: assets/fonts/Galada-Regular.ttf
+
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+
+    - family: Libre
+      fonts:
+        - asset: assets/fonts/LibreFranklin-Regular.ttf
+
+    - family: Lobster
+      fonts:
+        - asset: assets/fonts/Lobster-Regular.ttf
+
+    - family: Merriweather
+      fonts:
+        - asset: assets/fonts/Merriweather-Regular.ttf
+
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik-Regular.ttf
+

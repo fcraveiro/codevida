@@ -17,7 +17,6 @@ var qtdeAvatar;
 
 String _urlAvatar = 'http://52.67.253.92/avatar.php';
 
-
 void main() async {
   dadosAvatar = await lerDados(_urlAvatar);
   qtdeAvatar = dadosAvatar.length;
@@ -27,6 +26,7 @@ void main() async {
     routes: <String, WidgetBuilder>{
       '/Pagina1': (BuildContext context) => new Pagina1(),
       '/Pagina2': (BuildContext context) => new Pagina2(),
+      '/Noticias': (BuildContext context) => new Noticias(),
     },
     home: HomePage(),
   ));
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
-          Icon(Icons.more_vert),
+          Icon(Icons.more_vert, color: Colors.green,),
           SizedBox(
             width: 7.0,
           ),
@@ -65,7 +65,6 @@ class _HomePageState extends State<HomePage> {
       body: new Center(
         child: new ListView(
           children: <Widget>[
-
 //  AVATAR ******************************************************************
 
             Container(
@@ -132,7 +131,13 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Text('Cães',style: TextStyle(fontSize: 20.0,),),
+                                Text(
+                                  'Cães',
+                                  style: TextStyle(
+                                    fontSize: 22.0,
+                                fontFamily: 'Nunito',
+                                  ),
+                                ),
                               ],
                             ),
                           ],
@@ -176,7 +181,13 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Text('Doar',style: TextStyle(fontSize: 20.0,),),
+                              Text(
+                                'Doar',
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontFamily: 'Nunito',
+                                ),
+                              ),
                             ],
                           ),
                         ],
@@ -184,15 +195,15 @@ class _HomePageState extends State<HomePage> {
                     ),
 // 3
                     GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            new MaterialPageRoute(
-                              builder: (context) {
-                                return new Animais(animal: 'gatos');
-                              },
-                            ),
-                          );
-                        },
+                      onTap: () {
+                        Navigator.of(context).push(
+                          new MaterialPageRoute(
+                            builder: (context) {
+                              return new Animais(animal: 'gatos');
+                            },
+                          ),
+                        );
+                      },
                       child: Container(
                         margin: EdgeInsets.only(top: 0.0),
                         width: largura / 3 - 15,
@@ -228,7 +239,13 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Text('Gatos',style: TextStyle(fontSize: 20.0,),),
+                                Text(
+                                  'Gatos',
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontFamily: 'Nunito',
+                                  ),
+                                ),
                               ],
                             ),
                           ],
@@ -278,21 +295,22 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 RaisedButton(
-                    child: Text(
-                      'Teste Noticias',
-                      style: TextStyle(fontSize: 18.0, color: Colors.white),
-                    ),
-                    color: Colors.teal[800],
-                    shape: StadiumBorder(),
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        new MaterialPageRoute(
-                          builder: (context) {
-                            return new Noticias();
-                          },
-                        ),
-                      );
-                    }),
+                  child: Text(
+                    'Teste Noticias',
+                    style: TextStyle(fontSize: 18.0, color: Colors.white),
+                  ),
+                  color: Colors.teal[800],
+                  shape: StadiumBorder(),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (context) {
+                          return new Noticias();
+                        },
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
             SizedBox(
@@ -322,7 +340,6 @@ class _HomePageState extends State<HomePage> {
             ),
 
 //  ******************************************************************
-
           ],
         ),
       ),

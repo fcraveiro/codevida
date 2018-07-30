@@ -37,11 +37,6 @@ class _AnimaisState extends State<Animais> {
         centerTitle: true,
       ),
       body:
-
-
-
-
-
       ListView.builder(
           itemCount: data == null ? 0 : data.length,
           itemBuilder: (BuildContext context, int index) {
@@ -94,8 +89,10 @@ class _AnimaisState extends State<Animais> {
                 title: Text(
                   titulo,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue[500],
                     fontSize: 16.0,
+                    fontFamily: 'Raleway',
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 subtitle: new Text(

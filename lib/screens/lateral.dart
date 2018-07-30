@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'noticias.dart';
+import 'animais.dart';
 
 class Lateral extends StatelessWidget {
   @override
@@ -53,99 +55,139 @@ class Lateral extends StatelessWidget {
               children: <Widget>[
                 ListTile(
                   title: Text(
-                    'Item 1',
+                    'Ver os Cães',
                     style: TextStyle(
                       fontFamily: 'Libre',
-                      fontSize: 20.0,
+                      fontSize: 18.0,
                       color: Colors.white,
                     ),
                   ),
-                  leading: Icon(
-                    Icons.phone_iphone,
-                    color: Colors.white,
+                  leading: Container(
+                    width: 30.0,
+                    height: 30.0,
+                    child: Image.asset(
+                      'assets/dog.png',
+                      fit: BoxFit.contain,
+                      color: Colors.white,
+                    ),
                   ),
                   onTap: () {
-                    print('Clicado 1');
                     Navigator.pop(context);
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (context) {
+                          return new Animais(animal: 'caes');
+                        },
+                      ),
+                    );
                   },
                 ),
-                new Divider(color: Colors.white, indent: 0.0, height: 1.0,),
+                new Divider(
+                  color: Colors.white,
+                  indent: 0.0,
+                  height: 1.0,
+                ),
                 ListTile(
                   title: Text(
-                    'Item 2',
+                    'Ver os Gatos',
                     style: TextStyle(
                       fontFamily: 'Libre',
-                      fontSize: 20.0,
+                      fontSize: 18.0,
                       color: Colors.white,
                     ),
                   ),
-                  leading: Icon(
-                    Icons.phone_iphone,
-                    color: Colors.white,
+                  leading: Container(
+                    width: 30.0,
+                    height: 30.0,
+                    child: Image.asset(
+                      'assets/cat.png',
+                      fit: BoxFit.contain,
+                      color: Colors.white,
+                    ),
                   ),
                   onTap: () {
-                    print('Clicado 2');
                     Navigator.pop(context);
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (context) {
+                          return new Animais(animal: 'gatos');
+                        },
+                      ),
+                    );
                   },
                 ),
-                new Divider(color: Colors.white, indent: 0.0, height: 1.0,),
+                new Divider(
+                  color: Colors.white,
+                  indent: 0.0,
+                  height: 1.0,
+                ),
                 ListTile(
                   title: Text(
-                    'Item 3',
+                    'Doar',
                     style: TextStyle(
                       fontFamily: 'Libre',
-                      fontSize: 20.0,
+                      fontSize: 18.0,
                       color: Colors.white,
                     ),
                   ),
-                  leading: Icon(
-                    Icons.phone_iphone,
-                    color: Colors.white,
+                  leading: Container(
+                    width: 30.0,
+                    height: 30.0,
+                    child: Image.asset(
+                      'assets/doar.png',
+                      fit: BoxFit.contain,
+                      color: Colors.white,
+                    ),
                   ),
                   onTap: () {
                     print('Clicado 3');
                     Navigator.pop(context);
                   },
                 ),
-                new Divider(color: Colors.white, indent: 0.0, height: 1.0,),
+                new Divider(
+                  color: Colors.white,
+                  indent: 0.0,
+                  height: 1.0,
+                ),
                 ListTile(
                   title: Text(
-                    'Item 4',
+                    'Noticias',
                     style: TextStyle(
                       fontFamily: 'Libre',
                       fontSize: 20.0,
                       color: Colors.white,
                     ),
                   ),
-                  leading: Icon(
-                    Icons.phone_iphone,
-                    color: Colors.white,
-                  ),
-                  onTap: () {
-                    print('Clicado 4');
-                    Navigator.pop(context);
-                  },
-                ),
-                new Divider(color: Colors.white, indent: 0.0, height: 1.0,),
-                ListTile(
-                  title: Text(
-                    'Item 5',
-                    style: TextStyle(
-                      fontFamily: 'Libre',
-                      fontSize: 20.0,
+                  leading: Container(
+                    width: 30.0,
+                    height: 30.0,
+                    child: Image.asset(
+                      'assets/news.png',
+                      fit: BoxFit.contain,
                       color: Colors.white,
                     ),
                   ),
-                  leading: Icon(
-                    Icons.phone_iphone,
-                    color: Colors.white,
-                  ),
                   onTap: () {
-                    print('Clicado 5');
                     Navigator.pop(context);
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (context) {
+                          return new Noticias();
+                        },
+                      ),
+                    );
                   },
                 ),
-                new Divider(color: Colors.white, indent: 0.0, height: 1.0,),
+                new Divider(
+                  color: Colors.white,
+                  indent: 0.0,
+                  height: 1.0,
+                ),
+                new Divider(
+                  color: Colors.white,
+                  indent: 0.0,
+                  height: 1.0,
+                ),
               ],
             ),
           ],
