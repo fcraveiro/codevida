@@ -17,7 +17,7 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="rotas"
         android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDKykTJrZBYzfBXKa76ALp37Mb9H9ht8_M" />
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="API HERE" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

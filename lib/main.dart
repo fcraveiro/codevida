@@ -31,7 +31,7 @@ void main() async {
       '/Pagina1': (BuildContext context) => new Pagina1(),
       '/Pagina2': (BuildContext context) => new Pagina2(),
       '/Noticias': (BuildContext context) => new Noticias(),
-//      '/Maps': (BuildContext context) => new MapsDemo(mapWidget, controller.mapController),
+//      '/Maps': (BuildContext context) => new MapsDemo(),
     },
     home: HomePage(),
   ));

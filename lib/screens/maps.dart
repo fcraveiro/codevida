@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-void main() {
+void main()
+
+{
+
   GoogleMapController.init();
   final GoogleMapOverlayController controller =
   GoogleMapOverlayController.fromSize(width: 900.0, height: 450.0);
   final Widget mapWidget = GoogleMapOverlay(controller: controller);
+
   runApp(MaterialApp(
     home: new Scaffold(
       appBar: AppBar(title: const Text('Google Maps demo')),
