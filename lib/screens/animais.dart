@@ -5,7 +5,7 @@ import 'dart:convert';
 
 class Animais extends StatefulWidget {
 
-  String animal;
+  final String animal;
   Animais({this.animal});
 
   @override
@@ -19,6 +19,7 @@ class _AnimaisState extends State<Animais> {
   String bar;
 
   Future<String> lerDados() async {
+
     var res = await http
         .get(Uri.encodeFull(url), headers: {"Accept": "aplication/json"});
     setState(() {

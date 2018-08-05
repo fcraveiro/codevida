@@ -4,7 +4,7 @@ import 'dart:async';
 import 'dart:convert';
 
 class Noticias extends StatefulWidget {
-  String animal;
+  final String animal;
   Noticias({this.animal});
 
   @override
