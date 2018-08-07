@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'noticias.dart';
 import 'animais.dart';
+import 'camera.dart';
 
 class Lateral extends StatelessWidget {
   @override
@@ -182,6 +183,35 @@ class Lateral extends StatelessWidget {
                   color: Colors.white,
                   indent: 0.0,
                   height: 1.0,
+                ),
+                ListTile(
+                  title: Text(
+                    'Denúncia',
+                    style: TextStyle(
+                      fontFamily: 'Libre',
+                      fontSize: 20.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                  leading: Container(
+                    width: 30.0,
+                    height: 30.0,
+                    child: Image.asset(
+                      'assets/news.png',
+                      fit: BoxFit.contain,
+                      color: Colors.white,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (context) {
+                          return new Camera();
+                        },
+                      ),
+                    );
+                  },
                 ),
                 new Divider(
                   color: Colors.white,
