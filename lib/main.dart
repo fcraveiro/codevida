@@ -8,8 +8,7 @@ import 'package:rotas/screens/pagina1.dart';
 import 'package:rotas/screens/pagina2.dart';
 import 'package:rotas/screens/lateral.dart';
 import 'package:rotas/screens/noticias.dart';
-import 'package:rotas/screens/maps.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:rotas/screens/camera.dart';
 
 Map data;
 
@@ -22,16 +21,15 @@ String _urlAvatar = 'http://52.67.253.92/avatar.php';
 void main() async {
   dadosAvatar = await lerDados(_urlAvatar);
   qtdeAvatar = dadosAvatar.length;
+
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-
-
 
     routes: <String, WidgetBuilder>{
       '/Pagina1': (BuildContext context) => new Pagina1(),
       '/Pagina2': (BuildContext context) => new Pagina2(),
       '/Noticias': (BuildContext context) => new Noticias(),
-//      '/Maps': (BuildContext context) => new MapsDemo(),
+      '/Camera': (BuildContext context) => new Camera(),
     },
     home: HomePage(),
   ));
@@ -74,6 +72,7 @@ class _HomePageState extends State<HomePage> {
       body: new Center(
         child: new ListView(
           children: <Widget>[
+
 //  AVATAR ******************************************************************
 
             Container(
@@ -281,8 +280,22 @@ class _HomePageState extends State<HomePage> {
                       width: largura / 2 - 15,
                       height: 60.0,
                       child: RaisedButton(
-                        onPressed: () => debugPrint('Denuncia'),
-                        elevation: 4.0,
+                        onPressed: () {
+
+                          Navigator.of(context).pushNamed('/Camera');
+
+
+
+//                         Navigator.of(context).push(
+//                            new MaterialPageRoute(
+//                              builder: (context) {
+//                                return new Camera();
+//                              },
+//                            ),
+//                          );
+
+
+                        },                        elevation: 4.0,
                         color: Color.fromARGB(242, 242, 241, 241),
                         shape: StadiumBorder(),
                         child: Image.asset('assets/denuncia.png', fit: BoxFit.cover,),
