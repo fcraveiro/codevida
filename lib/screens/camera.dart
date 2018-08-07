@@ -52,60 +52,57 @@ class _CameraState extends State<Camera> {
       body: Column(
         children: <Widget>[
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-
 //  PAGINA ***********************************************,
 
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(
-                        top: 20.0,
-                        right: 40.0,
-                      ),
-                      width: 160.0,
-                      height: 260.0,
-                      decoration: ShapeDecoration(
-                          color: Colors.white,
-                          shape: Border.all(
-                        color: Colors.green[500],
-                        width: 1.0,
-                        style: BorderStyle.solid,
-                      )),
-                      child: _image == null
-                          ? Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                new Text(
-                                  'Sem Imagens',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    color: Colors.green[900],
-                                  ),
-                                ),
-                              ],
-                            )
-                          : new Image.file(
-                              _image,
-                              scale: 50.0,
-                              fit: BoxFit.fill,
-                            ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 20.0,
                     ),
-                  ],
-                ),
+                    width: 160.0,
+                    height: 260.0,
+                    decoration: ShapeDecoration(
+                        color: Colors.white,
+                        shape: Border.all(
+                          color: Colors.green[500],
+                          width: 1.0,
+                          style: BorderStyle.solid,
+                        )),
+                    child: _image == null
+                        ? Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              new Text(
+                                'Sem Imagens',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.green[900],
+                                ),
+                              ),
+                            ],
+                          )
+                        : new Image.file(
+                            _image,
+                            scale: 50.0,
+                            fit: BoxFit.fill,
+                          ),
+                  ),
+                ],
               ),
 
               Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Container(
                     padding: EdgeInsets.all(0.0),
-                    margin: EdgeInsets.only(top: 15.0, right: 35.0),
+                    margin: EdgeInsets.only(
+                      top: 15.0,
+                    ),
                     width: 80.0,
                     height: 80.0,
                     child: RaisedButton(
@@ -149,7 +146,9 @@ class _CameraState extends State<Camera> {
                   ),
                   Container(
                     padding: EdgeInsets.all(0.0),
-                    margin: EdgeInsets.only(top: 25.0, right: 35.0),
+                    margin: EdgeInsets.only(
+                      top: 20.0,
+                    ),
                     width: 80.0,
                     height: 80.0,
                     child: RaisedButton(
@@ -193,7 +192,9 @@ class _CameraState extends State<Camera> {
                   ),
                   Container(
                     padding: EdgeInsets.all(0.0),
-                    margin: EdgeInsets.only(top: 25.0, right: 35.0),
+                    margin: EdgeInsets.only(
+                      top: 20.0,
+                    ),
                     width: 80.0,
                     height: 40.0,
                     child: RaisedButton(
@@ -225,10 +226,46 @@ class _CameraState extends State<Camera> {
                       ),
                     ),
                   ),
-
-
                 ],
               ),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(top: 30.0),
+                width: 350.0,
+                height: 160.0,
+                color: Colors.white,
+
+
+
+                child: TextField(
+                  maxLines: 7,
+                  maxLength: 300,
+                  decoration: InputDecoration(
+//                    labelText: 'ddffnsh',
+                    hintText: 'HINT',
+                    filled: true,
+//                    border: OutlineInputBorder(
+//                      borderSide: BorderSide(
+//                          color: Colors.red,
+//                         width: 2.0,
+//                          style: BorderStyle.solid,
+//                      ),
+//                    ),
+                    counterStyle: TextStyle(
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+
+
+
+              )
             ],
           ),
 
