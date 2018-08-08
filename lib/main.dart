@@ -7,9 +7,6 @@ import 'screens/avatares.dart';
 import 'screens/doar.dart';
 import 'screens/denuncia.dart';
 
-
-//import 'package:rotas/screens/pagina1.dart';
-//import 'package:rotas/screens/pagina2.dart';
 import 'package:rotas/screens/lateral.dart';
 import 'package:rotas/screens/noticias.dart';
 import 'package:rotas/screens/camera.dart';
@@ -29,10 +26,6 @@ void main() async {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     routes: <String, WidgetBuilder>{
-
-//      '/Pagina1': (BuildContext context) => new Pagina1(),
-//      '/Pagina2': (BuildContext context) => new Pagina2(),
-
       '/Noticias': (BuildContext context) => new Noticias(),
       '/Camera': (BuildContext context) => new Camera(),
     },
@@ -138,6 +131,21 @@ class _HomePageState extends State<HomePage> {
 }
 
 /*
+
+
+
+//import 'package:rotas/screens/pagina1.dart';
+//import 'package:rotas/screens/pagina2.dart';
+
+
+
+
+//      '/Pagina1': (BuildContext context) => new Pagina1(),
+//      '/Pagina2': (BuildContext context) => new Pagina2(),
+
+
+
+
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
