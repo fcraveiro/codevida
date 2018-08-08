@@ -240,8 +240,6 @@ class _CameraState extends State<Camera> {
                 height: 160.0,
                 color: Colors.white,
 
-
-
                 child: TextField(
                   maxLines: 7,
                   maxLength: 300,
@@ -256,6 +254,7 @@ class _CameraState extends State<Camera> {
 //                          style: BorderStyle.solid,
 //                      ),
 //                    ),
+
                     counterStyle: TextStyle(
                       fontSize: 13.0,
                       fontWeight: FontWeight.bold,

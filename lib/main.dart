@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
+
 import 'screens/avatares.dart';
-import 'screens/animais.dart';
-import 'package:rotas/screens/pagina1.dart';
-import 'package:rotas/screens/pagina2.dart';
+import 'screens/doar.dart';
+import 'screens/denuncia.dart';
+
+
+//import 'package:rotas/screens/pagina1.dart';
+//import 'package:rotas/screens/pagina2.dart';
 import 'package:rotas/screens/lateral.dart';
 import 'package:rotas/screens/noticias.dart';
 import 'package:rotas/screens/camera.dart';
@@ -24,10 +28,11 @@ void main() async {
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-
     routes: <String, WidgetBuilder>{
-      '/Pagina1': (BuildContext context) => new Pagina1(),
-      '/Pagina2': (BuildContext context) => new Pagina2(),
+
+//      '/Pagina1': (BuildContext context) => new Pagina1(),
+//      '/Pagina2': (BuildContext context) => new Pagina2(),
+
       '/Noticias': (BuildContext context) => new Noticias(),
       '/Camera': (BuildContext context) => new Camera(),
     },
@@ -49,7 +54,7 @@ Future lerDados(String apiUrl) async {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    double largura = MediaQuery.of(context).size.width;
+//    double largura = MediaQuery.of(context).size.width;
 //    double altura = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -86,190 +91,53 @@ class _HomePageState extends State<HomePage> {
 
 //  BOTÃO DOAR *****************************************************************
 
-            Center(
-              child: Container(
-                margin: EdgeInsets.only(top: 5.0),
-                color: Colors.green[100],
-                padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-// 1
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          new MaterialPageRoute(
-                            builder: (context) {
-                              return new Animais(animal: 'caes');
-                            },
-                          ),
-                        );
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(top: 0.0),
-                        width: largura / 3 - 15,
-                        height: 37.0,
-                        decoration: ShapeDecoration(
-                          color: Colors.white,
-                          shape: StadiumBorder(
-                            side: BorderSide(
-                                color: Colors.green[800],
-                                width: 0.7,
-                                style: BorderStyle.solid),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                Container(
-                                  padding: EdgeInsets.all(4.0),
-                                  width: 40.0,
-                                  height: 35.0,
-                                  child: Image.asset(
-                                    'assets/dog.png',
-                                    fit: BoxFit.contain,
-                                  ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  'Cães',
-                                  style: TextStyle(
-                                    fontSize: 22.0,
-                                    fontFamily: 'Nunito',
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-// 2
-                    Container(
-                      margin: EdgeInsets.only(top: 0.0),
-                      width: largura / 3 - 15,
-                      height: 37.0,
-                      decoration: ShapeDecoration(
-                        color: Colors.white,
-                        shape: StadiumBorder(
-                          side: BorderSide(
-                              color: Colors.green[800],
-                              width: 0.7,
-                              style: BorderStyle.solid),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.all(4.0),
-                                width: 40.0,
-                                height: 35.0,
-//                                color: Colors.red,
-                                child: Image.asset(
-                                  'assets/doar.png',
-                                  fit: BoxFit.contain,
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                'Doar',
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontFamily: 'Nunito',
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-// 3
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          new MaterialPageRoute(
-                            builder: (context) {
-                              return new Animais(animal: 'gatos');
-                            },
-                          ),
-                        );
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(top: 0.0),
-                        width: largura / 3 - 15,
-                        height: 37.0,
-                        decoration: ShapeDecoration(
-                          color: Colors.white,
-                          shape: StadiumBorder(
-                            side: BorderSide(
-                                color: Colors.green[800],
-                                width: 0.7,
-                                style: BorderStyle.solid),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                Container(
-                                  padding: EdgeInsets.all(4.0),
-                                  width: 40.0,
-                                  height: 35.0,
-//                                  color: Colors.red,
-                                  child: Image.asset(
-                                    'assets/cat.png',
-                                    fit: BoxFit.contain,
-                                  ),
-                                )
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  'Gatos',
-                                  style: TextStyle(
-                                    fontSize: 20.0,
-                                    fontFamily: 'Nunito',
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            Doar(),
             SizedBox(
               height: 5.0,
             ),
 
+//  DENUNCIA e LOCALIZAÇÃO *****************************************************
+
+            Denuncia(),
+            SizedBox(
+              height: 60.0,
+            ),
+
 //  ******************************************************************
+
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text(
+                    'Teste Noticias',
+                    style: TextStyle(fontSize: 18.0, color: Colors.white),
+                  ),
+                  color: Colors.teal[800],
+                  shape: StadiumBorder(),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      new MaterialPageRoute(
+                        builder: (context) {
+                          return new Noticias();
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+
+//  ******************************************************************
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/*
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -323,14 +191,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 60.0,
-            ),
-            SizedBox(
-              width: 20.0,
-            ),
 
-//  ******************************************************************
+
+
+400 registros
+
 
             Row(
               mainAxisSize: MainAxisSize.min,
@@ -354,40 +219,9 @@ class _HomePageState extends State<HomePage> {
                     }),
               ],
             ),
-            SizedBox(
-              height: 20.0,
-            ),
 
-//  ******************************************************************
 
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  child: Text(
-                    'Teste Noticias',
-                    style: TextStyle(fontSize: 18.0, color: Colors.white),
-                  ),
-                  color: Colors.teal[800],
-                  shape: StadiumBorder(),
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      new MaterialPageRoute(
-                        builder: (context) {
-                          return new Noticias();
-                        },
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-
-//  ******************************************************************
+Teste de navegação
 
             Row(
               mainAxisSize: MainAxisSize.min,
@@ -405,14 +239,7 @@ class _HomePageState extends State<HomePage> {
                     }),
               ],
             ),
-            SizedBox(
-              height: 20.0,
-            ),
 
-//  ******************************************************************
-          ],
-        ),
-      ),
-    );
-  }
-}
+
+
+ */

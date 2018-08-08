@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Avatares extends StatelessWidget {
   final List dados;
   final int qtde;
