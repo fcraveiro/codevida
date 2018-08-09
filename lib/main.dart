@@ -6,6 +6,7 @@ import 'dart:async';
 import 'screens/avatares.dart';
 import 'screens/doar.dart';
 import 'screens/denuncia.dart';
+import 'screens/noticiacapa.dart';
 
 import 'package:rotas/screens/lateral.dart';
 import 'package:rotas/screens/noticias.dart';
@@ -47,7 +48,7 @@ Future lerDados(String apiUrl) async {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-//    double largura = MediaQuery.of(context).size.width;
+    double largura = MediaQuery.of(context).size.width;
 //    double altura = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -81,12 +82,59 @@ class _HomePageState extends State<HomePage> {
                 qtde: qtdeAvatar,
               ),
             ),
+            SizedBox(
+              height: 15.0,
+            ),
+
+//  NOTICIAS *******************************************************************
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        border: new Border(
+                            bottom: new BorderSide(
+                              width: 1.0,
+                              color: Colors.grey,
+                            ),
+                        ),
+                      ),
+                      padding: EdgeInsets.only(left: 5.0),
+                      width: largura - 30,
+                      height: 25.0,
+                      child: Text(
+                        'Noticias ...',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          color: Colors.green[900],
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.italic,
+                        ),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                    Container(
+                      width: largura - 30,
+                      height: 200.0,
+                      child: NoticiaCapa(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+
+            SizedBox(
+              height: 5.0,
+            ),
 
 //  BOTÃO DOAR *****************************************************************
 
             Doar(),
             SizedBox(
-              height: 5.0,
+              height: 15.0,
             ),
 
 //  DENUNCIA e LOCALIZAÇÃO *****************************************************
@@ -96,8 +144,8 @@ class _HomePageState extends State<HomePage> {
               height: 60.0,
             ),
 
-//  ******************************************************************
-
+//  NOTICIAS *******************************************************************
+/*
             Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -121,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-
+*/
 //  ******************************************************************
           ],
         ),

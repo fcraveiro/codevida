@@ -39,16 +39,22 @@ class _NoticiasState extends State<Noticias> {
             var urlImagem = data[index]['imageUrl'];
             var titulo = data[index]['titulo'];
             var descricao = data[index]['texto'];
+            debugPrint(urlImagem);
+            debugPrint('$index');
 
-            return Container(
+
+
+
+
+            return new Container(
               margin: EdgeInsets.only(top: 5.0),
               height: 110.0,
               decoration: BoxDecoration(
                 border: new Border(
                     bottom: new BorderSide(
-                  width: 1.0,
-                  color: Colors.grey,
-                )),
+                      width: 1.0,
+                      color: Colors.grey,
+                    )),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,7 +107,6 @@ class _NoticiasState extends State<Noticias> {
                       ),
 
 
-
                     ],
                   ),
 
@@ -124,7 +129,7 @@ class _NoticiasState extends State<Noticias> {
 //                            color: Colors.green[600],
                             child: new Text(
                               titulo,
-                              maxLines: 2,textAlign: TextAlign.start,
+                              maxLines: 2, textAlign: TextAlign.start,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontFamily: 'Raleway',
@@ -142,7 +147,7 @@ class _NoticiasState extends State<Noticias> {
 //                            color: Colors.blue[600],
                             child: new Text(
                               descricao,
-                              maxLines: 4,textAlign: TextAlign.justify,
+                              maxLines: 4, textAlign: TextAlign.justify,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontFamily: 'MerriweatherSans',
@@ -158,7 +163,11 @@ class _NoticiasState extends State<Noticias> {
                 ],
               ),
             );
-          }),
+
+//            ListaNoticia(imagem: urlImagem, titu: titulo, descri: descricao);
+
+          },
+      ),
     );
   }
 
